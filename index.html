@@ -162,6 +162,25 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .progress {
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 25px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 100%;
+  line-height: 25px;
+  color: white;
+  padding-left: 10px;
+  font-weight: 500;
+  transition: width 1.2s ease-in-out;
+}
+
   </style>
 </head>
 <body>
@@ -258,6 +277,41 @@
           </div>
         </div>
       </section>
+  </section>
+
+  <section id="skills" class="section bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up">Compétences</h2>
+      <div class="row">
+  
+        <div class="col-md-6" data-aos="fade-right">
+          <h4>Développement Web</h4>
+          <div class="progress">
+            <div class="progress-bar bg-primary" style="width: 90%;">HTML / CSS - 90%</div>
+          </div>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-primary" style="width: 85%;">JavaScript / React - 85%</div>
+          </div>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-primary" style="width: 80%;">Node.js / Express - 80%</div>
+          </div>
+        </div>
+  
+        <div class="col-md-6" data-aos="fade-left">
+          <h4>Data & BI</h4>
+          <div class="progress">
+            <div class="progress-bar bg-primary" style="width: 90%;">Power BI / Tableau - 90%</div>
+          </div>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-primary" style="width: 85%;">SQL / PostgreSQL - 85%</div>
+          </div>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-primary" style="width: 75%;">Python / Pandas - 75%</div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
   </section>
   <section id="projects">
     <h2 data-aos="fade-up">Mes projets</h2>
