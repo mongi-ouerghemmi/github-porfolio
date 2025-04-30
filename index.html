@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -202,97 +203,56 @@
       <h2>À propos de moi</h2>
       <p>Je suis passionnée par la création de sites modernes, interactifs et accessibles. J'aide les marques à se démarquer grâce à des interfaces intuitives et élégantes.</p>
     </div>
-    <section id="services" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-2" data-aos="fade-up">
-          <i class="fas fa-tools"></i> Services
-        </h2>
-        <p class="text-center mb-5" data-aos="fade-up">What I offer</p>
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Services</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-white text-gray-900">
     
-        <div class="row">
-          <!-- 1 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-database fa-2x"></i></div>
-              <h5 class="card-title">Data Engineering</h5>
-              <p class="card-text">Combine datasets from multiple sources and keep only the useful info using Power BI and Python.</p>
+      <section class="py-16" id="services">
+        <div class="max-w-7xl mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12">Services</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Carte 1 -->
+            <div class="bg-gray-100 p-8 rounded-2xl shadow-md text-center">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/ios-filled/50/code.png" alt="Développement" class="mx-auto h-12">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Développement</h3>
+              <p>Sites web, applications front-end et back-end modernes avec des technologies comme React, Node.js, etc.</p>
             </div>
-          </div>
     
-          <!-- 2 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-search fa-2x"></i></div>
-              <h5 class="card-title">Data Analysis</h5>
-              <p class="card-text">Analyze large datasets with Power BI and Python to understand correlation and key factors.</p>
+            <!-- Carte 2 -->
+            <div class="bg-gray-100 p-8 rounded-2xl shadow-md text-center">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/ios-filled/50/combo-chart--v1.png" alt="Data Analyse" class="mx-auto h-12">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Data Analyse</h3>
+              <p>Analyse de données, visualisation, dashboards pour aider à la prise de décision stratégique.</p>
             </div>
-          </div>
     
-          <!-- 3 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-chart-bar fa-2x"></i></div>
-              <h5 class="card-title">Data Visualization</h5>
-              <p class="card-text">Create dashboards using Power BI, Grafana, Python for better understanding over time.</p>
+            <!-- Carte 3 -->
+            <div class="bg-gray-100 p-8 rounded-2xl shadow-md text-center">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/ios-filled/50/pie-chart.png" alt="BI & Reporting" class="mx-auto h-12">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">BI & Reporting</h3>
+              <p>Création de rapports automatisés avec Power BI, Tableau, Metabase, etc.</p>
             </div>
-          </div>
     
-          <!-- 4 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-server fa-2x"></i></div>
-              <h5 class="card-title">Database</h5>
-              <p class="card-text">Create and manage SQL databases with views, temporary tables, and subqueries.</p>
-            </div>
-          </div>
-    
-          <!-- 5 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-network-wired fa-2x"></i></div>
-              <h5 class="card-title">Server installation</h5>
-              <p class="card-text">Install Linux servers on physical or virtual machines (e.g. Raspberry Pi).</p>
-            </div>
-          </div>
-    
-          <!-- 6 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-cogs fa-2x"></i></div>
-              <h5 class="card-title">IT Solutions</h5>
-              <p class="card-text">Diagnose, improve or design solutions with UML diagrams, specs, user guides.</p>
-            </div>
-          </div>
-    
-          <!-- 7 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-code fa-2x"></i></div>
-              <h5 class="card-title">Software development</h5>
-              <p class="card-text">Develop WPF apps in C# using SQL, bindings and Material Design.</p>
-            </div>
-          </div>
-    
-          <!-- 8 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-globe fa-2x"></i></div>
-              <h5 class="card-title">Web development</h5>
-              <p class="card-text">Create static websites with HTML/CSS or dynamic ones in PHP/JS.</p>
-            </div>
-          </div>
-    
-          <!-- 9 -->
-          <div class="col-md-4 mb-4" data-aos="zoom-in">
-            <div class="card h-100 text-center p-3 border-danger">
-              <div class="mb-3 text-danger"><i class="fas fa-laptop-code fa-2x"></i></div>
-              <h5 class="card-title">Console Applications</h5>
-              <p class="card-text">Build simple CLI apps in C# or Python for specific tasks.</p>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    
+    </body>
+    </html>
+    
     
     <section id="experience" class="section bg-light">
         <div class="container">
