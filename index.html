@@ -360,6 +360,44 @@
       cursorGlow.style.left = e.clientX + 'px';
       cursorGlow.style.top = e.clientY + 'px';
     });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    // Ne pas empêcher la soumission du formulaire
+    // e.preventDefault();
+    
+    // Récupérer le bouton
+    const button = this.querySelector('button');
+    const originalText = button.innerHTML;
+    
+    // Changer le texte du bouton pendant l'envoi
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+    button.disabled = true;
+    
+    e.preventDefault(); // Empêche l'envoi réel
+
+// Crée la notification
+const notif = document.createElement("div");
+notif.textContent = "Message envoyé !";
+notif.style.position = "fixed";
+notif.style.bottom = "20px";
+notif.style.right = "20px";
+notif.style.background = "#4ade80"; // vert
+notif.style.color = "#fff";
+notif.style.padding = "12px 20px";
+notif.style.borderRadius = "8px";
+notif.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
+notif.style.fontSize = "16px";
+notif.style.zIndex = "9999";
+document.body.appendChild(notif);
+
+// Supprime après 3 secondes
+setTimeout(() => {
+  notif.remove();
+}, 3000);
+
+// Réinitialise le formulaire (optionnel)
+this.reset();
+});
   </script>
   <style>
     /* Style pour le curseur personnalisé */
