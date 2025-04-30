@@ -23,34 +23,48 @@
     }
     header {
       background: url('https://media2.giphy.com/media/l3mZnuz4coJp8EBBm/giphy.gif') center/cover no-repeat;
+      height: 100vh;
       color: #fff;
-      padding: 100px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       position: relative;
-      background-attachment: fixed;
     }
     header::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 64, 0.5);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 64, 0.6);
       z-index: 0;
     }
-    header h1, header p {
+    header h1, header p, header a {
       position: relative;
       z-index: 1;
     }
     header h1 {
-      font-size: 3em;
+      font-size: 4em;
       animation: fadeInDown 1s ease-in-out;
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.5em;
       margin-top: 10px;
       animation: fadeInUp 1.5s ease-in-out;
+    }
+    header a.cta {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #3b82f6;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    header a.cta:hover {
+      background: #2563eb;
     }
     nav {
       background: #1e3a8a;
@@ -118,35 +132,26 @@
       left: 100%;
     }
     .project:hover {
-      transform: translateY(-15px) scale(1.02);
+      transform: translateY(-10px) scale(1.02);
       box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, textarea {
-      padding: 12px;
+    .progress {
+      background-color: #e5e7eb;
       border-radius: 5px;
-      border: 1px solid #93c5fd;
-      transition: border 0.3s;
+      overflow: hidden;
+      height: 25px;
+      margin-bottom: 10px;
+      border: 1px solid #cbd5e1;
     }
-    input:focus, textarea:focus {
-      border-color: #1e3a8a;
-      outline: none;
-    }
-    button {
-      padding: 12px;
-      background: #1e3a8a;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.6s ease;
-    }
-    button:hover {
-      background: #3b82f6;
+    .progress-bar {
+      height: 100%;
+      line-height: 25px;
+      color: #1e3a8a;
+      padding-left: 10px;
+      font-weight: 500;
+      background-color: #93c5fd;
+      width: 0;
+      transition: width 1.2s ease-in-out;
     }
     footer {
       text-align: center;
@@ -162,161 +167,53 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .progress {
-  background-color: #e5e7eb; /* fond gris clair */
-  border-radius: 5px;
-  overflow: hidden;
-  height: 25px;
-  margin-bottom: 10px;
-  border: 1px solid #cbd5e1;
-}
-
-.progress-bar {
-  height: 100%;
-  line-height: 25px;
-  color: #1e3a8a;
-  padding-left: 10px;
-  font-weight: 500;
-  background-color: #93c5fd; /* Couleur du remplissage */
-  width: 0; /* commence vide */
-  transition: width 1.2s ease-in-out;
-}
-
-
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5em; }
+      header p { font-size: 1.2em; }
+      #about { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Mongi Ouerghemmi</h1>
-    <p>Data Analyst</p>
+    <p>Data Analyst & Développeur Web</p>
+    <a href="#about" class="cta">En savoir plus</a>
   </header>
+
   <nav>
     <a href="#about">À propos</a>
     <a href="#projects">Projets</a>
+    <a href="#skills">Compétences</a>
     <a href="#contact">Contact</a>
   </nav>
-  <section id="about">
-    <img src="https://media.licdn.com/dms/image/v2/D4E03AQHyLElcbW6dpg/profile-displayphoto-shrink_400_400/B4EZPyWwiwGwAg-/0/1734937872950?e=1751500800&v=beta&t=OYjpUpFY4aWc-4v9ncnzxsC6ZOLKAPqd5iC-ApXSIgo" alt="Portrait de Julia Dupont" class="img-fluid rounded-circle">
-    <div data-aos="fade-left">
+
+  <section id="about" data-aos="fade-up">
+    <img src="https://media.licdn.com/dms/image/v2/D4E03AQHyLElcbW6dpg/profile-displayphoto-shrink_400_400/B4EZPyWwiwGwAg-/0/1734937872950" alt="Portrait Mongi">
+    <div>
       <h2>À propos de moi</h2>
-      <p>Je suis passionnée par la création de sites modernes, interactifs et accessibles. J'aide les marques à se démarquer grâce à des interfaces intuitives et élégantes.</p>
+      <p>Passionné par la donnée, les systèmes et le développement, je crée des solutions robustes et visuelles à l’aide de Power BI, Python, et le développement web moderne.</p>
     </div>
-    <section id="experience" class="section bg-light">
-        <div class="container">
-          <h2 class="text-center mb-5" data-aos="fade-up">Expérience professionnelle</h2>
-          <div class="timeline">
-      
-            <div class="timeline-item" data-aos="fade-right">
-              <div class="timeline-icon">
-                <img src="https://via.placeholder.com/50x50?text=1" alt="Logo Entreprise 1">
-              </div>
-              <div class="timeline-content">
-                <h4>Data Analyst - Pôle Formation</h4>
-                <p><strong>2024 - 2025</strong> • Analyse de données, création de tableaux de bord Power BI, automatisation de reportings.</p>
-              </div>
-            </div>
-      
-            <div class="timeline-item" data-aos="fade-left">
-              <div class="timeline-icon">
-                <img src="https://via.placeholder.com/50x50?text=2" alt="Logo Entreprise 2">
-              </div>
-              <div class="timeline-content">
-                <h4>Stagiaire Développeuse Web - Startup Tech</h4>
-                <p><strong>Été 2023</strong> • Développement d’une application web en React + Node.js.</p>
-              </div>
-            </div>
-      
-            <div class="timeline-item" data-aos="fade-right">
-              <div class="timeline-icon">
-                <img src="https://via.placeholder.com/50x50?text=3" alt="Logo Entreprise 3">
-              </div>
-              <div class="timeline-content">
-                <h4>Assistante IT - Mairie d’Annecy</h4>
-                <p><strong>2022</strong> • Assistance bureautique, dépannage informatique, gestion du parc logiciel.</p>
-              </div>
-            </div>
-      
-          </div>
-        </div>
-      </section>
-      
-      <!-- FORMATION -->
-      <section id="formation" class="section">
-        <div class="container">
-          <h2 class="text-center mb-5" data-aos="fade-up">Formation</h2>
-          <div class="timeline">
-      
-            <div class="timeline-item" data-aos="fade-left">
-              <div class="timeline-icon">
-                <img src="https://via.placeholder.com/50x50?text=IUT" alt="Logo IUT">
-              </div>
-              <div class="timeline-content">
-                <h4>BUT Informatique – IUT d’Annecy</h4>
-                <p><strong>2022 - 2025</strong> • Programmation, bases de données, BI, projets en équipe.</p>
-              </div>
-            </div>
-      
-            <div class="timeline-item" data-aos="fade-right">
-              <div class="timeline-icon">
-                <img src="https://via.placeholder.com/50x50?text=Lycée" alt="Logo Lycée">
-              </div>
-              <div class="timeline-content">
-                <h4>Bac Général – Lycée X</h4>
-                <p><strong>2022</strong> • Spécialités NSI & Mathématiques.</p>
-              </div>
-            </div>
-      
-            <div class="timeline-item" data-aos="fade-left">
-              <div class="timeline-icon">
-                <img src="https://via.placeholder.com/50x50?text=Prépa" alt="Logo Prépa">
-              </div>
-              <div class="timeline-content">
-                <h4>Prépa Intégrée – École Y</h4>
-                <p><strong>2021 - 2022</strong> • Introduction à l’algorithmique et à l’architecture des systèmes.</p>
-              </div>
-            </div>
-      
-          </div>
-        </div>
-      </section>
   </section>
 
   <section id="skills" class="section bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5" data-aos="fade-up">Compétences</h2>
-      <div class="row">
-  
-        <div class="col-md-6" data-aos="fade-right">
-          <h4>Développement Web</h4>
-          <div class="progress">
-            <div class="progress-bar" data-width="90%">HTML / CSS - 90%</div>
-          </div>
-          <div class="progress">
-            <div class="progress-bar" data-width="85%">JavaScript / React - 85%</div>
-          </div>
-          <div class="progress">
-            <div class="progress-bar" data-width="80%">Node.js / Express - 80%</div>
-          </div>
-          <!-- Même chose pour la section Data & BI -->
-        </div>
-  
-        <div class="col-md-6" data-aos="fade-left">
-          <h4>Data & BI</h4>
-          <div class="progress">
-            <div class="progress-bar" data-width="90%">HTML / CSS - 90%</div>
-          </div>
-          <div class="progress">
-            <div class="progress-bar" data-width="85%">JavaScript / React - 85%</div>
-          </div>
-          <div class="progress">
-            <div class="progress-bar" data-width="80%">Node.js / Express - 80%</div>
-          </div>
-        </div>
-  
+    <h2 class="text-center" data-aos="fade-up">Compétences</h2>
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <h4>Développement Web</h4>
+        <div class="progress"><div class="progress-bar" data-width="90%">HTML / CSS - 90%</div></div>
+        <div class="progress"><div class="progress-bar" data-width="85%">JavaScript / React - 85%</div></div>
+        <div class="progress"><div class="progress-bar" data-width="75%">Node.js / Express - 75%</div></div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h4>Data & BI</h4>
+        <div class="progress"><div class="progress-bar" data-width="95%">Power BI / DAX - 95%</div></div>
+        <div class="progress"><div class="progress-bar" data-width="90%">Python / Pandas - 90%</div></div>
+        <div class="progress"><div class="progress-bar" data-width="80%">SQL / PostgreSQL - 80%</div></div>
       </div>
     </div>
   </section>
+
   <section id="projects">
     <h2 data-aos="fade-up">Mes projets</h2>
     <div class="projects">
@@ -325,60 +222,39 @@
         <p>Un site de portfolio interactif et responsive avec animations au scroll.</p>
       </div>
       <div class="project" data-aos="zoom-in">
-        <h3>Application Recettes</h3>
-        <p>App web pour rechercher et sauvegarder des recettes favorites.</p>
+        <h3>App de Recettes</h3>
+        <p>Application web avec React + API pour rechercher et sauvegarder des recettes.</p>
       </div>
       <div class="project" data-aos="zoom-in">
-        <h3>Site d'agence</h3>
-        <p>Template élégant pour agences digitales avec galerie et formulaire de contact.</p>
+        <h3>Dashboard Power BI</h3>
+        <p>Tableau de bord dynamique de ventes avec slicers et KPI visuels.</p>
       </div>
     </div>
   </section>
-  <section id="mention">
-    <h2 data-aos="fade-up"><i class="fab fa-linkedin"></i> Mentions & Réseaux</h2>
-    <div data-aos="fade-up" style="display: flex; justify-content: center; padding: 20px;">
-      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7212004379971751936?collapsed=1" height="633" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
-    </div>
-  </section>
+
   <section id="contact">
-    <h2 data-aos="fade-up">Contactez-moi</h2>
-    <form id="contact-form" data-aos="fade-up">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+    <h2 data-aos="fade-up">Contact</h2>
+    <form data-aos="fade-up">
+      <input type="text" placeholder="Votre nom" required>
+      <input type="email" placeholder="Votre email" required>
+      <textarea placeholder="Votre message" rows="5" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
   </section>
+
   <footer>
-    <p>&copy; 2025 Mongi Ouerghemmi. Tous droits réservés.</p>
+    <p>&copy; 2025 Mongi Ouerghemmi • Portfolio</p>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000 });
-  
-    // Animation du remplissage au scroll
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const bar = entry.target;
-            const targetWidth = bar.getAttribute('data-width');
-            bar.style.width = targetWidth;
-          }
-        });
-      }, { threshold: 0.6 });
-  
-      document.querySelectorAll('.progress-bar').forEach(bar => {
-        observer.observe(bar);
+    AOS.init();
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".progress-bar").forEach(bar => {
+        const width = bar.getAttribute("data-width");
+        bar.style.width = width;
       });
     });
-  
-    // Message formulaire
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Merci pour votre message !');
-    });
   </script>
-  
 </body>
 </html>
